@@ -1,0 +1,9 @@
+================
+Index Column Tag
+================
+[LL_REPTAG_1 /]
+---
+
+(source_file
+  (column_index_tag
+    column_index: (number)))

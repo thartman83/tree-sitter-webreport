@@ -1,0 +1,9 @@
+============
+Variable Tag
+============
+[LL_REPTAG_!variable /]
+---
+
+(source_file
+  (variable_tag
+    variable_name: (identifier)))

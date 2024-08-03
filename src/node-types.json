@@ -1,0 +1,165 @@
+[
+  {
+    "type": "column_index_tag",
+    "named": true,
+    "fields": {
+      "column_index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "column_tag",
+    "named": true,
+    "fields": {
+      "column_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "constant_tag",
+    "named": true,
+    "fields": {
+      "constant_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "literal_dblquote_tag",
+    "named": true,
+    "fields": {
+      "literal_value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "literal_quote_tag",
+    "named": true,
+    "fields": {
+      "literal_value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "parameter_tag",
+    "named": true,
+    "fields": {
+      "parameter_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "column_index_tag",
+          "named": true
+        },
+        {
+          "type": "column_tag",
+          "named": true
+        },
+        {
+          "type": "constant_tag",
+          "named": true
+        },
+        {
+          "type": "literal_dblquote_tag",
+          "named": true
+        },
+        {
+          "type": "literal_quote_tag",
+          "named": true
+        },
+        {
+          "type": "parameter_tag",
+          "named": true
+        },
+        {
+          "type": "variable_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_tag",
+    "named": true,
+    "fields": {
+      "variable_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "_",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "number",
+    "named": true
+  }
+]

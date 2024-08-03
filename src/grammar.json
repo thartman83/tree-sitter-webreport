@@ -1,0 +1,295 @@
+{
+  "name": "webreport",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_definition"
+      }
+    },
+    "_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_reptag_definition"
+        }
+      ]
+    },
+    "webreport_tag_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_begin_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_webreport"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_end_tag"
+        }
+      ]
+    },
+    "_reptag_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_begin_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_reptag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_main_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_whitespace"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_end_tag"
+        }
+      ]
+    },
+    "_main_tag": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "parameter_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constant_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "column_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "column_index_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "literal_quote_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "literal_dblquote_tag"
+        }
+      ]
+    },
+    "parameter_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_parameter_tag_prefix"
+        },
+        {
+          "type": "FIELD",
+          "name": "parameter_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "constant_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_constant_tag_prefix"
+        },
+        {
+          "type": "FIELD",
+          "name": "constant_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "variable_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_variable_tag_prefix"
+        },
+        {
+          "type": "FIELD",
+          "name": "variable_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "column_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_column_tag_prefix"
+        },
+        {
+          "type": "FIELD",
+          "name": "column_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "column_index_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "FIELD",
+          "name": "column_index",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number"
+          }
+        }
+      ]
+    },
+    "literal_quote_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_quote"
+        },
+        {
+          "type": "FIELD",
+          "name": "literal_value",
+          "content": {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_quote"
+        }
+      ]
+    },
+    "literal_dblquote_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_dblquote"
+        },
+        {
+          "type": "FIELD",
+          "name": "literal_value",
+          "content": {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_dblquote"
+        }
+      ]
+    },
+    "_begin_tag": {
+      "type": "STRING",
+      "value": "[LL_"
+    },
+    "_end_tag": {
+      "type": "STRING",
+      "value": "/]"
+    },
+    "_parameter_tag_prefix": {
+      "type": "STRING",
+      "value": "_&"
+    },
+    "_constant_tag_prefix": {
+      "type": "STRING",
+      "value": "_$"
+    },
+    "_variable_tag_prefix": {
+      "type": "STRING",
+      "value": "_!"
+    },
+    "_column_tag_prefix": {
+      "type": "STRING",
+      "value": "="
+    },
+    "_webreport": {
+      "type": "STRING",
+      "value": "WEBREPORT"
+    },
+    "_reptag": {
+      "type": "STRING",
+      "value": "REPTAG"
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z]+"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "_quote": {
+      "type": "STRING",
+      "value": "'"
+    },
+    "_dblquote": {
+      "type": "STRING",
+      "value": "\""
+    },
+    "_whitespace": {
+      "type": "PATTERN",
+      "value": "\\s+"
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}

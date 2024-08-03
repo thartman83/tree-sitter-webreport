@@ -1,0 +1,11 @@
+=================
+Literal Quote Tag
+=================
+[LL_REPTAG_"" /][LL_REPTAG_'' /][LL_REPTAG_'Something' /]
+---
+
+(source_file
+  (literal_dblquote_tag)
+  (literal_quote_tag)
+  (literal_quote_tag
+    literal_value: (identifier)))

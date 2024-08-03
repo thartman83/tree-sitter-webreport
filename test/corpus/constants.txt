@@ -1,0 +1,9 @@
+============
+Constant Tag
+============
+[LL_REPTAG_$aConstant /]
+---
+
+(source_file
+  (constant_tag
+    constant_name: (identifier)))

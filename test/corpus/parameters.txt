@@ -1,0 +1,9 @@
+==================
+Parameter Reptag
+==================
+[LL_REPTAG_&parameter /]
+---
+
+(source_file
+  (parameter_tag
+    parameter_name: (identifier)))

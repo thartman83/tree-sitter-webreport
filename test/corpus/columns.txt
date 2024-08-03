@@ -1,0 +1,9 @@
+==========
+Column Tag
+==========
+[LL_REPTAG=AColumn /]
+---
+
+(source_file
+  (column_tag
+    column_name: (identifier)))
